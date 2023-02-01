@@ -1,0 +1,30 @@
+{% extends "./base.html" %}
+
+{% block title %} Gestión de Cursos {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Edición de Marca</h2>
+        <div class="card">
+            <div class="card-body">
+
+                <form action="{% url 'editar_marca' marca.id %} " method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" id="txtNombre" name="txtNombre" value="{{marca.nombre}}" class="form-control" placeholder="Nombre del articulo"
+                            maxlength="200" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="numOrden" name="numOrden" value="{{marca.orden}}" class="form-control" min="1" max="9"
+                            value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
