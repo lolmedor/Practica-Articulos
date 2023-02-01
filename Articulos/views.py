@@ -24,9 +24,9 @@ def create_marca(request):
 
 
 def create_produc(request):
-    produc = Producto(nombre=request.POST['txtNombre'], precio=request.POST['precio'],
-                     cantidad=request.POST['cantidad'], estado=request.POST['estado'],
-                     marca=request.POST['choice'])
+    produc = Producto( nombre=request.POST['txtNombre'],
+                      precio=request.POST['precio'], cantidad=request.POST['cantidad'],
+                      estado=request.POST['estado'])
 
     produc.save()
     messages.success(request, '¡Producto registrado!')

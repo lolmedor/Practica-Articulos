@@ -39,9 +39,9 @@
 
                     <div class="form-group">
                         <label>Marca</label>
-                        <select name="choice">
+                        <select name="choice" id="marca">
                             {% for c in marcas %}
-                            <option value="{{c.id}}">{{c.nombre}}</option>
+                            <option value= {{c}} >{{c.nombre}}</option>
                             {% endfor %}
                         </select>
 
